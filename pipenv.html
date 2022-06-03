@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pipenv چیست</title>
+        <meta property="og:locale" content="fa_IR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Pipenv چیست ؟" />
+        <meta property="og:description" content="Pipenv در پروژه python" />
+        <meta property="og:url" content="https://cv.hamdid.info" />
+        <meta property="og:site_name" content="نپرس که بپرسم، فقط بپرس !" />
+        <meta property="og:image" content="https://DontAskToAsk.ir/assets/icons/android-icon-192x192.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:description" content="Pipenv در پروژه python"/>
+        <meta name="twitter:title" content="Pipenv در پروژه python" />
+        <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <meta name="msapplication-TileColor" content="#C2185B">
+        <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#C2185B">
+        <meta name="google-site-verification" content="p6QU87bs_0d2k59-UOiWqrNEb81WBkex8lE_EjXmgvQ" />
+        <link rel="stylesheet" href="css/ltr.css?ver=1.0.1">
+    </head>
+
+    <body>
+        
+        <div class="holder">
+
+            <h1 class="semi-black no-select">Pipenv چیست ؟</h1>
+
+            <i class="toggle-mode icon-sun"></i>
+
+            <script>
+                !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e=e||self,function(){var r=e.Cookies,n=e.Cookies=t();n.noConflict=function(){return e.Cookies=r,n}}())}(this,function(){"use strict";function e(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)e[n]=r[n]}return e}var t={read:function(e){return e.replace(/%3B/g,";")},write:function(e){return e.replace(/;/g,"%3B")}};return function r(n,i){function o(r,o,u){if("undefined"!=typeof document){"number"==typeof(u=e({},i,u)).expires&&(u.expires=new Date(Date.now()+864e5*u.expires)),u.expires&&(u.expires=u.expires.toUTCString()),r=t.write(r).replace(/=/g,"%3D"),o=n.write(String(o),r);var c="";for(var f in u)u[f]&&(c+="; "+f,!0!==u[f]&&(c+="="+u[f].split(";")[0]));return document.cookie=r+"="+o+c}}return Object.create({set:o,get:function(e){if("undefined"!=typeof document&&(!arguments.length||e)){for(var r=document.cookie?document.cookie.split("; "):[],i={},o=0;o<r.length;o++){var u=r[o].split("="),c=u.slice(1).join("="),f=t.read(u[0]).replace(/%3D/g,"=");if(i[f]=n.read(c,f),e===f)break}return e?i[e]:i}},remove:function(t,r){o(t,"",e({},r,{expires:-1}))},withAttributes:function(t){return r(this.converter,e({},this.attributes,t))},withConverter:function(t){return r(e({},this.converter,t),this.attributes)}},{attributes:{value:Object.freeze(i)},converter:{value:Object.freeze(n)}})}(t,{path:"/"})});
+
+                var _Cookies$get;
+
+                let Mode = (_Cookies$get = Cookies.get('dontasktoask-mode')) !== null && _Cookies$get !== void 0 ? _Cookies$get : 'light';
+
+                let mode_icon = document.querySelector('.toggle-mode');
+                
+                document.querySelector(".toggle-mode").addEventListener('click', function () {
+                    setMode(Mode, true);
+                });
+
+                const setMode = (Mode, Notify, Reverse = false) => {
+                    Notify = Notify || true;
+
+                    if (Reverse) {
+
+                    switch (Mode) {
+                        case "light" :
+                            setLightMode();
+                            if (Notify) {
+                                NotifyMode('light');
+                            }
+                            break;
+                        case "dark" :
+                            setDarkMode();
+                            if (Notify) {
+                                NotifyMode('dark');
+                            }
+                            break
+                    }
+
+                    }else{
+
+                    switch (Mode) {
+                        case "light" :
+                            setDarkMode();
+                            if (Notify) {
+                                NotifyMode('dark');
+                            }
+                            break;
+                        case "dark" :
+                            setLightMode();
+                            if (Notify) {
+                                NotifyMode('light');
+                            }
+                            break
+                    }
+
+                    }
+                    
+                };
+
+                const setDarkMode = () => {
+                    document.body.classList.add('dark');
+                    mode_icon.classList.remove('icon-moon');
+                    mode_icon.classList.add('icon-sun');
+                    Mode = 'dark';
+                    document.cookie = "dontasktoask-mode=" + Mode + ";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;";
+                };
+
+                const setLightMode = () => {
+                    document.body.classList.remove('dark');
+                    mode_icon.classList.remove('icon-sun');
+                    mode_icon.classList.add('icon-moon');
+                    Mode = 'light';
+                    document.cookie = "dontasktoask-mode=" + Mode + ";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;";
+                };
+
+                window.addEventListener("storage", ReceiveMode);
+
+                function NotifyMode(message) {
+                    localStorage.setItem('message',JSON.stringify(message));
+                }
+
+                function ReceiveMode(ev) {
+                    if (ev.key === 'message') {
+                        let message = JSON.parse(ev.newValue);
+                        switch (message) {
+                            case "dark" :
+                                setDarkMode();
+                                break;
+                            case "light" :
+                                setLightMode();
+                                break;
+                        }
+                    }
+                }
+
+                setMode(Mode, true, true);
+            </script>
+
+            <p class="normal">
+                Pipenv 
+                یک ابزار برای مدیرت پکیج پایتون است که برای شماترکیب pip با virtualenv را فراهم می اورد و دیگر نیاز به فعال کردن یا غیر فعال کردن ندارد +
+            </p>
+
+            <blockquote>
+                <span class="bold">پرسشگر :</span>
+                <div class="medium">
+                   ایا نیاز به استفاده virtualenv یا pip هنگامی که از Pipenv استفاده میکنیم داریم ؟
+
+                </div>
+            </blockquote>
+
+            <p class="normal">
+                خیر همون جور که گفته شد یجورایی میکس ویرچوال اینوایرومنت و پیپ  می باشد .
+                
+            </p>
+
+            <blockquote>
+                <span class="bold">پرسشگر :</span>
+                <div class="medium">
+                   نحوه مدیریت کردن پکیج های نصب شده و پکیج هایی که حذف میشوند به چه صورت است ؟
+                </div>
+            </blockquote>
+
+
+            <p class="normal">به صورت خودکار فضای مجازی مدیریت پکیج ها را می سازد و با نصب و یا حذف یک پکیج فایل Pipfile.lock دچار تغییر شده تا اخرین تغیرات مربوط به پکیچ های شما را داشته باشد .</p>
+        
+
+            <a href="https://pipenv.pypa.io/en/latest/" target="_blank">
+
+                <b class="medium">آموزش استفاده از Pipenv</b>
+            </a>
+            
+            <script src="https://imerfan.ir/em-projects.js"></script>
+        </div>
+
+        <script data-type="em-star" data-name="hamid2520" data-lang="en" data-color-accent="#C2185B" src="hamid.js" defer></script>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161433595-7"></script> -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-161433595-7');
+        </script>
+
+    </body>
+</html>
