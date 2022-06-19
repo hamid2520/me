@@ -404,3 +404,7 @@ u {
 .top-margin{
   margin-top: 80px;
 }
+
+pre{
+  border-radius: 15px;
+}
